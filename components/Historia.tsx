@@ -14,7 +14,7 @@ export default function Historia() {
 
                         <div className="relative h-[400px] md:h-[500px] w-full z-10 shadow-xl rounded-lg overflow-hidden">
                             <Image
-                                src="/images/family-detail.png" // Asegúrate de que la extensión sea correcta (.png o .jpg)
+                                src="/images/optimized/family-detail.webp"
                                 alt="Detalle de manos trabajando en la viña - Familia Bravo"
                                 fill
                                 className="object-cover hover:scale-105 transition-transform duration-700"

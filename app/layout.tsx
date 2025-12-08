@@ -1,32 +1,36 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: '--font-playfair'
+  variable: '--font-serif',
+  display: 'swap',
 });
 
 const lato = Lato({
   weight: ['300', '400', '700'],
   subsets: ["latin"],
-  variable: '--font-lato'
+  variable: '--font-sans',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Caudal | Cabernet Franc Icono - Bodega Bravo",
-  description: "Venta Especial de Lanzamiento. Edición Limitada de 500 botellas del Valle del Maipo. Envío directo.",
+  title: "Caudal | Cabernet Franc Icono - Valle del Maule",
+  description: "Venta exclusiva de lanzamiento. Vino de autor del Fundo Los Nogales (1887). Oferta especial por cajas con envío directo.",
+  keywords: ["Vino Caudal", "Cabernet Franc Chile", "Vino Valle del Maule", "Bodega Bravo", "Vino de Autor", "Oferta Vinos"],
   openGraph: {
-    title: "Caudal - El Icono de Bodega Bravo",
-    description: "Solo 500 botellas. Accede al precio de lanzamiento exclusivo aquí.",
+    title: "🍷 Lanzamiento Exclusivo: Caudal Cabernet Franc",
+    description: "La máxima expresión del Maule. Aprovecha los precios de lanzamiento por caja. Envío a todo Chile.",
     url: "https://bodegabravo.cl",
     siteName: "Bodega Bravo",
     images: [
       {
-        url: "/images/terroir-bg.jpg",
+        url: "/images/optimized/terroir-bg.webp",
         width: 1200,
         height: 630,
-        alt: "Viñedos Bodega Bravo",
+        alt: "Viñedos Bodega Bravo - Valle del Maule",
       },
     ],
     locale: "es_CL",
@@ -41,8 +45,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${playfair.variable} ${lato.variable} bg-[#EBE9E4] text-slate-900 antialiased`}>
+      <body className={`${playfair.variable} ${lato.variable} antialiased`}>
         {children}
+        <GoogleAnalytics gaId="G-WN49F28ZVX" />
       </body>
     </html>
   );
