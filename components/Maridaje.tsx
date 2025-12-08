@@ -1,40 +1,47 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { Utensils, Flame, Wheat } from "lucide-react";
-
-const pairings = [
-    {
-        icon: <Flame size={40} strokeWidth={1} />,
-        title: "Fuego & Brasas",
-        desc: "El carácter ahumado del Cabernet Franc se eleva con cortes magros a la parrilla, como un ojo de bife o entraña jugosa."
-    },
-    {
-        icon: <Utensils size={40} strokeWidth={1} />,
-        title: "Alta Cocina",
-        desc: "Ideal para acompañar pastas con salsas de hongos silvestres, trufa negra o reducciones de vino tinto."
-    },
-    {
-        icon: <Wheat size={40} strokeWidth={1} />,
-        title: "Quesos Curados",
-        desc: "La acidez equilibrada limpia el paladar, haciéndolo el compañero perfecto para quesos de pasta dura y maduración larga."
-    }
-];
+import { motion } from 'framer-motion';
+import { Flame, Utensils, Wheat } from 'lucide-react';
 
 export default function Maridaje() {
-    return (
-        <section id="maridajes" className="py-24 bg-caudal-cream border-t border-stone-200">
-            <div className="max-w-7xl mx-auto px-6 text-center">
+    const pairings = [
+        {
+            icon: <Flame className="w-8 h-8" />,
+            title: "Carnes a las Brasas",
+            desc: "Ideal para cortes magros como entraña o palanca. Su acidez limpia la grasa sin opacar la carne.",
+            color: "bg-red-50 text-red-700"
+        },
+        {
+            icon: <Utensils className="w-8 h-8" />,
+            title: "Alta Cocina",
+            desc: "Perfecto con pastas rellenas de hongos, risotto de setas o platos con trufa negra.",
+            color: "bg-orange-50 text-orange-700"
+        },
+        {
+            icon: <Wheat className="w-8 h-8" />,
+            title: "Tablas y Quesos",
+            desc: "Quesos de pasta dura y maduros. Charcutería fina como jamón serrano y salames artesanales.",
+            color: "bg-amber-50 text-amber-700"
+        }
+    ];
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-16"
-                >
-                    <span className="text-caudal-red font-bold tracking-[0.2em] text-xs uppercase">Gastronomía</span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mt-3">El Arte del Maridaje</h2>
-                </motion.div>
+    return (
+        <section className="py-24 bg-white relative overflow-hidden">
+            {/* Círculo decorativo */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#EBE9E4] rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/2"></div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="text-center mb-16">
+                    <span className="text-[#881337] font-bold tracking-widest uppercase text-sm">
+                        Gastronomía
+                    </span>
+                    <h2 className="mt-2 text-4xl md:text-5xl font-serif text-slate-900">
+                        El Arte del Maridaje
+                    </h2>
+                    <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+                        Un vino versátil que eleva la experiencia culinaria.
+                    </p>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {pairings.map((item, idx) => (
@@ -42,15 +49,17 @@ export default function Maridaje() {
                             key={idx}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
                             transition={{ delay: idx * 0.2 }}
-                            className="group p-8 border border-stone-300 hover:border-caudal-red/50 bg-white transition-all duration-500 hover:shadow-xl"
+                            whileHover={{ y: -5 }}
+                            className="bg-white p-8 rounded-2xl border border-stone-100 shadow-lg hover:shadow-xl hover:border-[#881337]/20 transition-all group"
                         >
-                            <div className="mb-6 text-slate-800 group-hover:text-caudal-red transition-colors duration-300 flex justify-center">
+                            <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${item.color}`}>
                                 {item.icon}
                             </div>
-                            <h3 className="text-2xl font-serif text-slate-900 mb-4">{item.title}</h3>
-                            <p className="text-slate-600 font-sans leading-relaxed text-sm">
+                            <h3 className="text-xl font-serif text-slate-900 mb-3 group-hover:text-[#881337] transition-colors">
+                                {item.title}
+                            </h3>
+                            <p className="text-slate-600 text-sm leading-relaxed">
                                 {item.desc}
                             </p>
                         </motion.div>

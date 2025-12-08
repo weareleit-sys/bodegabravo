@@ -1,36 +1,35 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Mountain, Wind, Droplets } from 'lucide-react';
+import { MapPin, Mountain, Waves, Droplets } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Vina() {
     const features = [
         {
             icon: <MapPin className="w-6 h-6" />,
-            title: "Ubicación Privilegiada",
-            desc: "Junta de los ríos Ancoa y Achibueno, Región del Maule."
+            title: "Valle del Maule",
+            desc: "Ubicado al poniente de Linares, en el histórico Fundo Los Nogales."
+        },
+        {
+            icon: <Waves className="w-6 h-6" />, // Icono de Olas/Ríos
+            title: "Entre Dos Ríos",
+            desc: "Situado en la junta de los ríos Ancoa y Achibueno, aportando carácter único."
         },
         {
             icon: <Mountain className="w-6 h-6" />,
-            title: "Suelo Vivo",
-            desc: "Terrenos apaisados, arenosos y bien drenados para alta calidad."
-        },
-        {
-            icon: <Wind className="w-6 h-6" />,
-            title: "Clima Mediterráneo",
-            desc: "Oscilaciones térmicas que permiten una maduración lenta y elegante."
+            title: "Suelo Arenoso",
+            desc: "Terrenos apaisados de excelente drenaje, ideales para parras de alta calidad."
         },
         {
             icon: <Droplets className="w-6 h-6" />,
-            title: "Secano Interior",
-            desc: "Vides profundas y resilientes, sin riego artificial."
+            title: "Historia Viva",
+            desc: "Cavas y bodegas construidas en 1887, preservando la tradición."
         }
     ];
 
     return (
         <section id="vina" className="relative py-24 bg-slate-900 text-white overflow-hidden">
-            {/* Fondo Optimizado */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/images/optimized/terroir-bg.webp"
@@ -51,23 +50,21 @@ export default function Vina() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-[#EBE9E4] tracking-[0.2em] uppercase text-sm font-bold">
-                            Desde 1887
+                            El Origen del Nombre
                         </span>
                         <h2 className="mt-2 text-4xl md:text-5xl font-serif leading-tight">
-                            Fundo Los Nogales <br />
-                            <span className="text-red-400">Región del Maule</span>
+                            La Fuerza del <br />
+                            <span className="text-red-400">Caudal</span>
                         </h2>
 
                         <div className="mt-6 space-y-4 text-slate-300 font-sans leading-relaxed">
                             <p>
-                                La historia comienza en 1887 con la construcción de nuestras antiguas bodegas.
-                                Más tarde, en 1930, <strong>Don Raúl Bravo Valenzuela</strong>, Enólogo e Ingeniero Agrónomo,
-                                asumió el legado introduciendo cepas francesas de Cabernet Franc.
+                                El nombre <strong>CAUDAL</strong> rinde homenaje a la fuerza y calidad de las aguas que irrumpen
+                                y riegan nuestros suelos en el encuentro de los ríos <strong>Ancoa y Achibueno</strong>.
                             </p>
                             <p>
-                                Hoy, conservamos esas parras originales como un tesoro vivo. Combinando prácticas
-                                enológicas tradicionales y una profunda herencia vitivinícola, logramos vinos de
-                                gran equilibrio y autenticidad.
+                                Es una celebración a las extraordinarias cosechas que estos terrenos privilegiados nos brindan,
+                                custodiados por el magnífico telón de fondo de los Andes.
                             </p>
                         </div>
                     </motion.div>

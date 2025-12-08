@@ -8,11 +8,14 @@ export default function NotasCata() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <span className="text-[#881337] font-bold tracking-widest uppercase text-sm">
-                        En Copa
+                        Fresco y Elegante
                     </span>
                     <h2 className="mt-2 text-4xl md:text-5xl font-serif text-slate-900">
                         Perfil Sensorial
                     </h2>
+                    <p className="mt-4 text-slate-600 italic">
+                        "Recomendamos beberlo frío para resaltar sus sabores."
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -26,7 +29,7 @@ export default function NotasCata() {
                         </div>
                         <h3 className="text-xl font-serif text-center mb-4">A la Vista</h3>
                         <p className="text-slate-600 text-center text-sm leading-relaxed">
-                            Rojo rubí brillante. Menos intenso que un Cabernet Sauvignon, pero con una vivacidad que denota su acidez natural y frescura.
+                            Color <strong>rojo rubí</strong>. Un perfil tenue que denota su elegancia clásica y su frescura natural.
                         </p>
                     </motion.div>
 
@@ -40,8 +43,8 @@ export default function NotasCata() {
                         </div>
                         <h3 className="text-xl font-serif text-center mb-4">En Nariz</h3>
                         <ul className="text-slate-600 text-sm space-y-2 text-center">
-                            <li><strong>Primarios:</strong> Frutas rojas, pimiento rojo asado, violetas.</li>
-                            <li><strong>Terciarios:</strong> Notas elegantes de cuero, tabaco, grafito y tierra húmeda.</li>
+                            <li><strong>Frutas:</strong> Aromas claros a frambuesa y frutilla.</li>
+                            <li><strong>Matices:</strong> Notas complejas de tabaco y toques hierbales propios de la variedad.</li>
                         </ul>
                     </motion.div>
 
@@ -55,7 +58,7 @@ export default function NotasCata() {
                         </div>
                         <h3 className="text-xl font-serif text-center mb-4">En Boca</h3>
                         <p className="text-slate-600 text-center text-sm leading-relaxed">
-                            Cuerpo medio con taninos suaves y finos. Acidez natural alta que lo hace jugoso. Final elegante con un dejo mineral o salino propio del Maule.
+                            Taninos suaves. Una acidez fluctuante y madura que entrega un sabor complejo y armónico. Un vino que ha tomado protagonismo por sí mismo.
                         </p>
                     </motion.div>
                 </div>
