@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MoveRight, ArrowDown } from "lucide-react"; // Cambié Phone por ArrowDown para indicar scroll
 import Navbar from "@/components/Navbar";
 import Pricing from "@/components/Pricing";
+import CabernetFranc from "@/components/CabernetFranc";
 import Historia from "@/components/Historia";
 import Vina from "@/components/Vina";
 import NotasCata from "@/components/NotasCata";
@@ -91,6 +92,7 @@ export default function Home() {
 
       {/* COMPONENTES */}
       <Pricing />
+      <CabernetFranc />
       <div id="historia"><Historia /></div>
       <div id="vina"><Vina /></div>
       <div id="notas-cata"><NotasCata /></div>
