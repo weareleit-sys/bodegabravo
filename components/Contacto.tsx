@@ -59,8 +59,8 @@ export default function Contacto() {
 
                 <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 font-sans">
                     <div className="mb-4 md:mb-0 text-center md:text-left">
-                        <p>Mendoza, Argentina</p>
-                        <p>+54 9 261 123 4567</p>
+                        <p>Valle del Maule, Chile</p>
+                        <p>+56 9 1234 5678</p>
                     </div>
                     <div className="flex gap-6 uppercase tracking-wider text-xs font-bold">
                         <a href="#" className="hover:text-white transition-colors">Instagram</a>

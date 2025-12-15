@@ -45,7 +45,7 @@ export default function AgeGate() {
                                 BODEGA BRAVO
                             </h1>
                             <p className="text-slate-500 text-xs tracking-[0.2em] uppercase">
-                                Valle del Maipo
+                                VALLE DEL MAULE
                             </p>
                         </div>
 
@@ -65,13 +65,13 @@ export default function AgeGate() {
                                 onClick={handleConfirm}
                                 className="w-full bg-[#881337] text-white py-4 px-8 rounded text-sm font-bold tracking-widest uppercase hover:bg-[#6d0f2b] transition-colors shadow-lg"
                             >
-                                Sí, tengo 18+
+                                SÍ, TENGO 18+
                             </button>
                             <button
                                 onClick={handleDeny}
                                 className="w-full text-slate-500 text-xs uppercase tracking-widest hover:text-[#881337] transition-colors py-2"
                             >
-                                No, soy menor
+                                NO, SOY MENOR
                             </button>
                         </div>
 

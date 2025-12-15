@@ -1,95 +1,142 @@
 "use client";
-
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-caudal-cream flex flex-col justify-center items-center md:flex-row">
+        <section className="relative min-h-screen w-full overflow-hidden bg-[#EBE9E4] flex flex-col justify-center items-center md:flex-row pt-20 md:pt-0">
 
-            {/* 1. FONDO DE LÍNEAS ABSTRACTAS (SVG) */}
-            <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
-                <svg
-                    className="w-full h-full"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                >
-                    <motion.path
-                        d="M0,100 Q30,50 100,0 M-10,100 Q40,40 100,10 M-20,100 Q50,30 100,20"
+            {/* 1. TEXTURA DE RUIDO GLOBAL */}
+            <div className="absolute inset-0 z-0 bg-noise opacity-40 pointer-events-none mix-blend-soft-light" />
+
+            {/* 2. RAÍCES ABSTRACTAS DE FONDO */}
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+                <svg className="absolute w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="none">
+                    <path
+                        d="M-100,600 C200,800 600,200 1200,300 S1600,100 1700,50"
                         fill="none"
-                        stroke="var(--color-caudal-red)"
-                        strokeWidth="0.5"
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 1 }}
-                        transition={{ duration: 2, ease: "easeInOut" }}
+                        stroke="#881337"
+                        strokeWidth="1.5"
+                        className="mix-blend-multiply"
                     />
-                    <motion.path
-                        d="M0,90 Q40,60 90,0 M0,80 Q50,50 100,5"
+                    <path
+                        d="M-50,800 C300,900 700,600 1000,800"
                         fill="none"
-                        stroke="var(--color-caudal-red)"
-                        strokeWidth="0.3"
-                        initial={{ pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 1 }}
-                        transition={{ duration: 2.5, ease: "easeInOut", delay: 0.5 }}
+                        stroke="#881337"
+                        strokeWidth="1"
+                        strokeDasharray="10,10"
+                        className="mix-blend-multiply opacity-50"
                     />
                 </svg>
             </div>
 
-            {/* 2. CONTENIDO TEXTUAL (CENTRAL) */}
-            <div className="z-10 text-center px-6 md:text-left md:w-1/2 md:pl-20">
-                <motion.p
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="text-caudal-red font-bold tracking-[0.2em] text-sm md:text-base mb-4"
-                >
-                    RESERVA EL DÍA
-                </motion.p>
+            {/* 3. CONTENEDOR PRINCIPAL */}
+            <div className="container mx-auto px-6 relative z-10 h-full flex flex-col-reverse md:flex-row items-center gap-12 md:gap-0">
 
-                <motion.h1
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-serif text-slate-900 leading-tight"
-                >
-                    Lunes 22 <br />
-                    <span className="text-4xl md:text-6xl italic text-slate-700">de Diciembre</span>
-                </motion.h1>
+                {/* COLUMNA IZQUIERDA: VENTA & TEXTO */}
+                <div className="w-full md:w-1/2 text-center md:text-left pt-8 md:pt-0 z-20">
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.2 }}
-                    className="mt-8 h-px w-24 bg-caudal-red md:ml-0 mx-auto"
-                />
+                    {/* Badge */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="inline-block mb-4"
+                    >
+                        <span className="border border-[#881337] text-[#881337] px-3 py-1 text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase rounded-sm bg-[#EBE9E4]/50 backdrop-blur-sm">
+                            Edición Limitada 2025
+                        </span>
+                    </motion.div>
 
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5 }}
-                    className="mt-6 text-lg text-slate-600 max-w-md mx-auto md:mx-0 font-sans"
-                >
-                    El renacer de una tradición familiar. <br />
-                    Presentando nuestro Cabernet Franc Icono.
-                </motion.p>
-            </div>
+                    {/* Título */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-6xl md:text-8xl font-serif text-[#1a1a1a] leading-[0.9] mb-4"
+                    >
+                        CAUDAL
+                    </motion.h1>
 
-            {/* 3. TIPOGRAFÍA VERTICAL GIGANTE (Derecha) */}
-            <div className="hidden md:flex md:w-1/2 h-full justify-center items-center relative z-10">
-                <motion.div
-                    initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    className="writing-vertical-rl text-[12rem] lg:text-[15rem] font-serif font-bold text-slate-900 leading-none opacity-10 select-none mix-blend-multiply"
-                    style={{ writingMode: 'vertical-rl' }}
-                >
-                    CAUDAL
-                </motion.div>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="text-xl md:text-2xl font-serif text-slate-600 italic mb-8"
+                    >
+                        Cabernet Franc Icono <span className="text-[#881337] mx-2">•</span> Valle del Maule
+                    </motion.p>
 
-                {/* Imagen de Botella (Placeholder por ahora) */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    {/* Aquí luego pondremos la foto de la botella con fondo transparente */}
-                    {/* <div className="w-32 h-96 bg-caudal-red/20 backdrop-blur-sm rounded-full"></div> */}
+                    {/* SECCIÓN DE PRECIO & CTA */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        className="bg-white/60 backdrop-blur-md p-6 rounded-sm border border-[#881337]/10 inline-block md:min-w-[400px] shadow-sm"
+                    >
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-4">
+                            <div className="text-center md:text-left">
+                                <p className="text-slate-400 text-sm line-through decoration-[#881337]/50 mb-1">
+                                    Precio Lista: $18.000
+                                </p>
+                                <p className="text-4xl md:text-5xl font-serif text-[#881337]">
+                                    $12.000
+                                </p>
+                            </div>
+
+                            <Link
+                                href="#comprar"
+                                className="bg-[#881337] text-white py-4 px-8 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-[#6d0f2b] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-2 whitespace-nowrap"
+                            >
+                                Ver Ofertas <ArrowDown className="w-4 h-4" />
+                            </Link>
+                        </div>
+
+                        {/* --- TEXTO CORREGIDO --- */}
+                        <p className="text-[10px] md:text-xs text-slate-600 border-t border-[#881337]/10 pt-3 italic font-medium">
+                            *Precio Lanzamiento: $12.000. Valores preferenciales en Cajas.
+                        </p>
+                    </motion.div>
                 </div>
+
+                {/* COLUMNA DERECHA: FOTO HERO */}
+                <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative flex items-center justify-center">
+
+                    {/* Marca de Agua Vertical */}
+                    <div className="absolute right-0 md:right-10 top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.05] z-0">
+                        <span className="text-[120px] md:text-[200px] font-serif font-bold text-[#881337] whitespace-nowrap -rotate-90 block tracking-tighter select-none">
+                            1887
+                        </span>
+                    </div>
+
+                    {/* IMAGEN DE LA BOTELLA */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        className="relative z-10 w-full h-full flex items-center justify-center p-8"
+                    >
+                        {/* 
+                           AJUSTE FOTOGRÁFICO:
+                           Como la foto tiene fondo (paisaje), le damos estilo de "Postal/Cuadro" 
+                           en lugar de intentar borrar el fondo.
+                        */}
+                        <div className="relative w-full max-w-[400px] aspect-[3/4] shadow-2xl rounded-sm overflow-hidden border-4 border-white/50">
+                            <Image
+                                src="/images/hero-bottle.png" // Asegúrate que es PNG o JPG
+                                alt="Caudal en el Viñedo"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                            {/* Brillo sutil sobre la foto */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-[#881337]/20 to-transparent mix-blend-overlay" />
+                        </div>
+                    </motion.div>
+                </div>
+
             </div>
         </section>
     );

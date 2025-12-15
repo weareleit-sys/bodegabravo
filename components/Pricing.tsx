@@ -1,136 +1,175 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { Check, MessageCircle, Star } from 'lucide-react';
+"use client";
+import { motion } from "framer-motion";
+import { Check, MessageCircle, Star } from "lucide-react";
 
 export default function Pricing() {
-    // Configuración de WhatsApp
-    const phone = "56992344819"; // Tu número real
+    const phoneNumber = "56975496553";
 
-    const tiers = [
-        {
-            name: "Explorador",
-            quantity: "1 Botella",
-            price: "$12.000",
-            pricePerUnit: null,
-            description: "Ideal para conocer la esencia de nuestro Cabernet Franc.",
-            features: ["Presentación en caja individual", "Notas de cata incluidas"],
-            cta: "Comprar 1 Botella",
-            highlight: false,
-            message: "Hola! Me interesa comprar 1 botella de Caudal a $12.000."
-        },
-        {
-            name: "Conocedor",
-            quantity: "Caja de 6",
-            price: "$60.000",
-            pricePerUnit: "$10.000 c/u",
-            description: "La medida perfecta para compartir en familia.",
-            features: ["Ahorras $12.000", "Envío prioritario", "Ficha técnica digital"],
-            cta: "Pedir Caja de 6",
-            highlight: false,
-            message: "Hola! Quiero aprovechar la oferta de 1 Caja (6 vinos) a $60.000."
-        },
-        {
-            name: "Coleccionista",
-            quantity: "2 Cajas (12 vinos)",
-            price: "$108.000",
-            pricePerUnit: "$9.000 c/u",
-            description: "Para guardar, regalar y disfrutar todo el año.",
-            features: ["Mejor precio del mercado", "Ahorras $36.000", "Asesoría de guarda directa"],
-            cta: "Pedir Oferta Mayorista",
-            highlight: true, // Esto hace que se destaque visualmente
-            message: "Hola! Quiero la oferta mayorista de 2 Cajas a $9.000 por botella."
-        }
-    ];
-
-    const getWhatsAppLink = (msg: string) => {
-        return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    };
+    const whatsappLink = (message: string) =>
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
-        <section id="oferta" className="py-24 relative overflow-hidden">
-            {/* Fondo sutil */}
-            <div className="absolute inset-0 bg-[#EBE9E4] opacity-50 z-0"></div>
+        <section className="relative py-32 overflow-hidden bg-[#EBE9E4]" id="comprar">
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="text-[#881337] font-bold tracking-widest uppercase text-sm"
-                    >
-                        Lanzamiento Exclusivo 2024
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="mt-2 text-4xl md:text-5xl font-serif text-slate-900"
-                    >
-                        Elige tu experiencia Caudal
-                    </motion.h2>
-                    <p className="mt-4 text-slate-600 max-w-2xl mx-auto font-sans">
-                        Adquiere nuestro Cabernet Franc directamente de la bodega, sin intermediarios.
+            {/* 1. TEXTURA Y FONDO (Sin cambios) */}
+            <div className="absolute inset-0 z-0 bg-noise opacity-40 pointer-events-none mix-blend-soft-light" />
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+                <svg className="absolute w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="none">
+                    <path d="M-50,400 C300,300 600,800 900,700 S1500,200 1600,100" fill="none" stroke="#881337" strokeWidth="1" className="mix-blend-multiply" />
+                </svg>
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+
+                {/* ENCABEZADO */}
+                <div className="text-center mb-16 space-y-4">
+                    <span className="text-[#881337] text-[10px] font-bold tracking-[0.3em] uppercase border-b border-[#881337] pb-1 inline-block">
+                        Lanzamiento Exclusivo 2025
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a]">
+                        Elige tu Experiencia Caudal
+                    </h2>
+                    <p className="text-slate-600 font-serif italic text-lg max-w-xl mx-auto">
+                        "Adquiere nuestro Cabernet Franc Icono directamente de la bodega, sin intermediarios."
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                    {tiers.map((tier, index) => (
-                        <motion.div
-                            key={tier.name}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`relative p-8 rounded-2xl border transition-all duration-300 ${tier.highlight
-                                    ? 'bg-white border-[#881337] shadow-2xl scale-105 z-10'
-                                    : 'bg-white/60 border-stone-200 shadow-lg hover:border-[#881337]/30'
-                                }`}
+                {/* GRILLA DE PRECIOS */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+
+                    {/* OPCIÓN 1: BOTELLA INDIVIDUAL */}
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="bg-[#EBE9E4] p-8 rounded-sm border border-[#1a1a1a]/10 shadow-lg relative flex flex-col h-full"
+                    >
+                        <h3 className="text-xl font-serif text-[#1a1a1a] mb-2">Explorador</h3>
+                        <p className="text-xs text-[#881337] mb-6 uppercase tracking-widest font-bold">1 Botella</p>
+
+                        <div className="mb-4">
+                            <span className="text-4xl font-serif text-[#1a1a1a]">$12.000</span>
+                        </div>
+
+                        <p className="text-slate-600 text-sm mb-8 leading-relaxed border-t border-slate-200 pt-4">
+                            Ideal para conocer la esencia de nuestro Cabernet Franc.
+                        </p>
+
+                        <ul className="space-y-3 mb-8 flex-grow">
+                            <li className="flex items-start gap-3 text-sm text-slate-700">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Presentación en caja individual</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-slate-700">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Notas de cata incluidas</span>
+                            </li>
+                        </ul>
+
+                        <a
+                            href={whatsappLink("Hola, quiero comprar 1 botella de Caudal a $12.000.")}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-[#1a1a1a] text-white py-4 px-6 rounded-sm text-xs font-bold tracking-widest uppercase hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
                         >
-                            {tier.highlight && (
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#881337] text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1 shadow-md">
-                                    <Star size={14} fill="currentColor" /> MEJOR VALOR
-                                </div>
-                            )}
+                            <MessageCircle className="w-4 h-4" />
+                            Comprar 1 Botella
+                        </a>
+                    </motion.div>
 
-                            <h3 className="text-xl font-serif text-slate-900">{tier.name}</h3>
-                            <p className="text-[#881337] font-bold mt-1">{tier.quantity}</p>
+                    {/* OPCIÓN 2: CAJA DE 6 */}
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="bg-[#EBE9E4] p-8 rounded-sm border border-[#1a1a1a]/10 shadow-lg relative flex flex-col h-full"
+                    >
+                        <h3 className="text-xl font-serif text-[#1a1a1a] mb-2">Conocedor</h3>
+                        <p className="text-xs text-[#881337] mb-6 uppercase tracking-widest font-bold">Caja de 6</p>
 
-                            <div className="mt-4 flex items-baseline gap-2">
-                                <span className="text-4xl font-serif font-bold text-slate-900">{tier.price}</span>
-                            </div>
-                            {tier.pricePerUnit && (
-                                <p className="text-sm text-emerald-700 font-bold font-sans mt-1">
-                                    Queda en {tier.pricePerUnit}
-                                </p>
-                            )}
+                        <div className="mb-1">
+                            <span className="text-5xl font-serif text-[#1a1a1a]">$60.000</span>
+                        </div>
+                        <p className="text-emerald-700 text-xs font-bold uppercase tracking-wide mb-6">
+                            Queda en $10.000 c/u
+                        </p>
 
-                            <p className="mt-4 text-slate-600 text-sm leading-relaxed">
-                                {tier.description}
-                            </p>
+                        <p className="text-slate-600 text-sm mb-8 leading-relaxed border-t border-slate-200 pt-4">
+                            La medida perfecta para compartir en familia.
+                        </p>
 
-                            <ul className="mt-6 space-y-3">
-                                {tier.features.map((feature) => (
-                                    <li key={feature} className="flex items-start gap-3 text-sm text-slate-700">
-                                        <Check size={18} className="text-[#881337] shrink-0 mt-0.5" />
-                                        <span>{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        <ul className="space-y-3 mb-8 flex-grow">
+                            <li className="flex items-start gap-3 text-sm text-slate-700">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Ahorras $12.000</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-slate-700">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Envío prioritario</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-slate-700">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Ficha técnica digital</span>
+                            </li>
+                        </ul>
 
-                            <a
-                                href={getWhatsAppLink(tier.message)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`mt-8 w-full block text-center py-3 px-6 rounded-lg font-bold transition-all flex items-center justify-center gap-2 ${tier.highlight
-                                        ? 'bg-[#881337] text-white hover:bg-[#6d0f2b] shadow-lg hover:shadow-xl'
-                                        : 'bg-slate-900 text-white hover:bg-slate-800'
-                                    }`}
-                            >
-                                <MessageCircle size={18} />
-                                {tier.cta}
-                            </a>
-                        </motion.div>
-                    ))}
+                        <a
+                            href={whatsappLink("Hola, quiero reservar una Caja de 6 Caudal a $60.000.")}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-[#1a1a1a] text-white py-4 px-6 rounded-sm text-xs font-bold tracking-widest uppercase hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+                        >
+                            <MessageCircle className="w-4 h-4" />
+                            Pedir Caja de 6
+                        </a>
+                    </motion.div>
+
+                    {/* OPCIÓN 3: COLECCIONISTA (2 CAJAS) */}
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className="bg-[#EBE9E4] p-8 rounded-sm border-2 border-[#881337] shadow-2xl relative flex flex-col h-full transform md:-translate-y-4 z-10"
+                    >
+                        {/* Badge de Mejor Valor */}
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#881337] text-white px-4 py-1 text-[10px] font-bold tracking-[0.2em] uppercase rounded-sm shadow-md whitespace-nowrap flex items-center gap-1">
+                            <Star className="w-3 h-3 fill-current" /> Mejor Valor
+                        </div>
+
+                        <h3 className="text-2xl font-serif text-[#1a1a1a] mb-2">Coleccionista</h3>
+                        <p className="text-xs text-[#881337] mb-6 uppercase tracking-widest font-bold">2 Cajas (12 vinos)</p>
+
+                        <div className="mb-1">
+                            <span className="text-5xl font-serif text-[#1a1a1a]">$108.000</span>
+                        </div>
+                        <p className="text-emerald-700 text-xs font-bold uppercase tracking-wide mb-6">
+                            Queda en $9.000 c/u
+                        </p>
+
+                        <p className="text-slate-600 text-sm mb-8 leading-relaxed border-t border-[#881337]/20 pt-4">
+                            Para guardar, regalar y disfrutar todo el año.
+                        </p>
+
+                        <ul className="space-y-3 mb-8 flex-grow">
+                            <li className="flex items-start gap-3 text-sm text-[#1a1a1a] font-medium">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Mejor precio del mercado</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-[#1a1a1a]">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Ahorras $36.000</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-[#1a1a1a]">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Asesoría de guarda directa</span>
+                            </li>
+                        </ul>
+
+                        <a
+                            href={whatsappLink("Hola, me interesa la oferta Coleccionista de 2 Cajas a $108.000.")}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-[#881337] text-white py-4 px-6 rounded-sm text-sm font-bold tracking-widest uppercase hover:bg-[#6d0f2b] transition-colors flex items-center justify-center gap-2 shadow-lg"
+                        >
+                            <MessageCircle className="w-4 h-4" />
+                            Pedir Oferta Mayorista
+                        </a>
+                    </motion.div>
+
                 </div>
             </div>
         </section>

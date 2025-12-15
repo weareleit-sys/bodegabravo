@@ -1,88 +1,62 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { MapPin, Mountain, Waves, Droplets } from 'lucide-react';
-import Image from 'next/image';
+import Image from "next/image";
+import { Mountain, CloudSun, Wind } from "lucide-react";
 
 export default function Vina() {
-    const features = [
-        {
-            icon: <MapPin className="w-6 h-6" />,
-            title: "Valle del Maule",
-            desc: "Ubicado al poniente de Linares, en el histórico Fundo Los Nogales."
-        },
-        {
-            icon: <Waves className="w-6 h-6" />, // Icono de Olas/Ríos
-            title: "Entre Dos Ríos",
-            desc: "Situado en la junta de los ríos Ancoa y Achibueno, aportando carácter único."
-        },
-        {
-            icon: <Mountain className="w-6 h-6" />,
-            title: "Suelo Arenoso",
-            desc: "Terrenos apaisados de excelente drenaje, ideales para parras de alta calidad."
-        },
-        {
-            icon: <Droplets className="w-6 h-6" />,
-            title: "Historia Viva",
-            desc: "Cavas y bodegas construidas en 1887, preservando la tradición."
-        }
-    ];
-
     return (
-        <section id="vina" className="relative py-24 bg-slate-900 text-white overflow-hidden">
-            <div className="absolute inset-0 z-0">
+        <section id="vina" className="relative py-24 md:py-32 overflow-hidden">
+
+            {/* 1. FONDO INMERSIVO (Drone Shot) */}
+            <div className="absolute inset-0 w-full h-full z-0">
                 <Image
-                    src="/images/optimized/terroir-bg.webp"
-                    alt="Viñedos Bodega Bravo Maule"
+                    src="/images/terroir-bg.jpg" // Tu foto de dron
+                    alt="Viñedos Bodega Bravo - Valle del Maule"
                     fill
-                    className="object-cover opacity-30"
+                    className="object-cover"
                     quality={80}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
+                {/* Overlay oscuro */}
+                <div className="absolute inset-0 bg-slate-900/70 mix-blend-multiply z-10" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* 2. CONTENIDO */}
+            <div className="relative z-20 container mx-auto px-4 text-center">
 
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-[#EBE9E4] tracking-[0.2em] uppercase text-sm font-bold">
-                            El Origen del Nombre
-                        </span>
-                        <h2 className="mt-2 text-4xl md:text-5xl font-serif leading-tight">
-                            La Fuerza del <br />
-                            <span className="text-red-400">Caudal</span>
-                        </h2>
+                <span className="text-amber-100/80 uppercase tracking-[0.3em] text-xs font-bold mb-4 block">
+                    El Origen
+                </span>
 
-                        <div className="mt-6 space-y-4 text-slate-300 font-sans leading-relaxed">
-                            <p>
-                                El nombre <strong>CAUDAL</strong> rinde homenaje a la fuerza y calidad de las aguas que irrumpen
-                                y riegan nuestros suelos en el encuentro de los ríos <strong>Ancoa y Achibueno</strong>.
-                            </p>
-                            <p>
-                                Es una celebración a las extraordinarias cosechas que estos terrenos privilegiados nos brindan,
-                                custodiados por el magnífico telón de fondo de los Andes.
-                            </p>
-                        </div>
-                    </motion.div>
+                <h2 className="text-4xl md:text-5xl font-serif text-white mb-12">
+                    Valle del Maule
+                </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        {features.map((feature, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-red-500/50 transition-colors"
-                            >
-                                <div className="text-red-400 mb-3">{feature.icon}</div>
-                                <h3 className="text-xl font-serif mb-2">{feature.title}</h3>
-                                <p className="text-sm text-slate-300">{feature.desc}</p>
-                            </motion.div>
-                        ))}
+                {/* Grid de Datos Técnicos MAULE */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+
+                    {/* Card 1: Suelo Maule */}
+                    <div className="p-6 border border-white/20 rounded-lg backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors">
+                        <Mountain className="w-8 h-8 text-amber-100 mx-auto mb-4" />
+                        <h3 className="text-xl font-serif text-white mb-2">Arcilla y Granito</h3>
+                        <p className="text-slate-300 text-sm font-light">
+                            Suelos antiguos que retienen la humedad necesaria para cultivar sin riego excesivo. Profundidad y carácter.
+                        </p>
+                    </div>
+
+                    {/* Card 2: Clima Maule */}
+                    <div className="p-6 border border-white/20 rounded-lg backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors">
+                        <CloudSun className="w-8 h-8 text-amber-100 mx-auto mb-4" />
+                        <h3 className="text-xl font-serif text-white mb-2">Tradición de Secano</h3>
+                        <p className="text-slate-300 text-sm font-light">
+                            Veranos cálidos e influencia costera que permiten una maduración lenta, entregando fruta roja vibrante.
+                        </p>
+                    </div>
+
+                    {/* Card 3: Viento/Patrimonio */}
+                    <div className="p-6 border border-white/20 rounded-lg backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors">
+                        <Wind className="w-8 h-8 text-amber-100 mx-auto mb-4" />
+                        <h3 className="text-xl font-serif text-white mb-2">Patrimonio Vivo</h3>
+                        <p className="text-slate-300 text-sm font-light">
+                            Respetamos los ciclos naturales de la viña. Mínima intervención para que el Maule hable en la copa.
+                        </p>
                     </div>
 
                 </div>
