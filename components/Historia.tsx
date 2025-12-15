@@ -10,12 +10,13 @@ export default function Historia() {
                 <div className="flex flex-col lg:flex-row items-center gap-16">
 
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex-1 relative"
+                        transition={{ duration: 0.8 }}
+                        className="relative w-full lg:flex-1"
                     >
-                        <div className="relative h-[500px] w-full lg:w-[450px] rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="relative h-[350px] lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/optimized/family-detail.webp"
                                 alt="Historia Bodega Bravo"
