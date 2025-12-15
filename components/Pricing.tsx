@@ -53,17 +53,6 @@ export default function Pricing() {
                             Ideal para conocer la esencia de nuestro Cabernet Franc.
                         </p>
 
-                        <ul className="space-y-3 mb-8 flex-grow">
-                            <li className="flex items-start gap-3 text-sm text-slate-700">
-                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
-                                <span>Presentación en caja individual</span>
-                            </li>
-                            <li className="flex items-start gap-3 text-sm text-slate-700">
-                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
-                                <span>Notas de cata incluidas</span>
-                            </li>
-                        </ul>
-
                         <a
                             href={whatsappLink("Hola, quiero comprar 1 botella de Caudal a $12.000.")}
                             target="_blank"
@@ -91,7 +80,7 @@ export default function Pricing() {
                         </p>
 
                         <p className="text-slate-600 text-sm mb-8 leading-relaxed border-t border-slate-200 pt-4">
-                            La medida perfecta para compartir en familia.
+                            La medida perfecta para compartir en situaciones especiales.
                         </p>
 
                         <ul className="space-y-3 mb-8 flex-grow">
@@ -101,11 +90,11 @@ export default function Pricing() {
                             </li>
                             <li className="flex items-start gap-3 text-sm text-slate-700">
                                 <Check className="w-4 h-4 text-[#881337] mt-0.5" />
-                                <span>Envío prioritario</span>
+                                <span>Envío</span>
                             </li>
                             <li className="flex items-start gap-3 text-sm text-slate-700">
                                 <Check className="w-4 h-4 text-[#881337] mt-0.5" />
-                                <span>Ficha técnica digital</span>
+                                <span>Reserva</span>
                             </li>
                         </ul>
 
@@ -147,15 +136,15 @@ export default function Pricing() {
                         <ul className="space-y-3 mb-8 flex-grow">
                             <li className="flex items-start gap-3 text-sm text-[#1a1a1a] font-medium">
                                 <Check className="w-4 h-4 text-[#881337] mt-0.5" />
-                                <span>Mejor precio del mercado</span>
-                            </li>
-                            <li className="flex items-start gap-3 text-sm text-[#1a1a1a]">
-                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
                                 <span>Ahorras $36.000</span>
                             </li>
                             <li className="flex items-start gap-3 text-sm text-[#1a1a1a]">
                                 <Check className="w-4 h-4 text-[#881337] mt-0.5" />
-                                <span>Asesoría de guarda directa</span>
+                                <span>Almacenado</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-[#1a1a1a]">
+                                <Check className="w-4 h-4 text-[#881337] mt-0.5" />
+                                <span>Envío prioritario</span>
                             </li>
                         </ul>
 
