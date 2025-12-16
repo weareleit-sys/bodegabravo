@@ -9,7 +9,7 @@ export default function Pricing() {
         `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
-        <section className="relative py-32 overflow-hidden bg-[#EBE9E4]" id="comprar">
+        <section className="relative pt-32 pb-12 overflow-hidden bg-[#EBE9E4]" id="comprar">
 
             {/* 1. TEXTURA Y FONDO (Sin cambios) */}
             <div className="absolute inset-0 z-0 bg-noise opacity-40 pointer-events-none mix-blend-soft-light" />

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function VintageToast() {
     return (
-        <section className="relative py-24 bg-[#EBE9E4] overflow-hidden">
+        <section className="relative py-8 bg-[#EBE9E4] overflow-hidden">
             <div className="container mx-auto px-4 max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
