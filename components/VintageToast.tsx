@@ -17,7 +17,7 @@ export default function VintageToast() {
                     <div className="relative w-full h-full border-4 border-slate-200/50 overflow-hidden sepia-[0.3]">
                         <Image
                             src="/images/vintage-toast-1887.png"
-                            alt="Brindis histórico en Bodega Bravo, 1887"
+                            alt="Casona histórica Bodega Bravo, 1887"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-[2s]"
                             sizes="(max-width: 768px) 100vw, 80vw"
@@ -32,7 +32,7 @@ export default function VintageToast() {
                     {/* Pie de foto manuscrito */}
                     <div className="absolute -bottom-12 right-4 md:right-8 rotate-[-2deg]">
                         <span className="font-serif italic text-slate-500 text-lg md:text-xl tracking-wide opacity-80" style={{ fontFamily: 'var(--font-serif)' }}>
-                            "El primer brindis, 1887"
+                            "Bodega Bravo, 1887"
                         </span>
                     </div>
                 </motion.div>
