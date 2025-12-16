@@ -9,6 +9,7 @@ import Historia from "@/components/Historia";
 import Vina from "@/components/Vina";
 import NotasCata from "@/components/NotasCata";
 import Maridaje from "@/components/Maridaje";
+import VintageToast from "@/components/VintageToast";
 import RedLinesBackground from "@/components/RedLinesBackground";
 import AgeGate from "@/components/AgeGate";
 import Footer from "@/components/Footer";
@@ -92,6 +93,7 @@ export default function Home() {
 
       {/* COMPONENTES */}
       <Pricing />
+      <VintageToast />
       <CabernetFranc />
       <div id="historia"><Historia /></div>
       <div id="vina"><Vina /></div>
