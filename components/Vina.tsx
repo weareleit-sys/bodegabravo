@@ -55,7 +55,7 @@ export default function Vina() {
                         <Waves className="w-8 h-8 text-amber-100 mx-auto mb-4" />
                         <h3 className="text-xl font-serif text-white mb-2">Entre Dos Ríos</h3>
                         <p className="text-slate-300 text-sm font-light">
-                            Ubicados estratégicamente en la confluencia fluvial, creando un corredor fresco que regula la temperatura y nutre el carácter del vino.
+                            Nacido del encuentro entre los ríos Ancoa y Achibueno. La fuerza de sus aguas inspira el nombre y define el carácter de Caudal.
                         </p>
                     </div>
 
