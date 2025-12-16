@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Maridaje() {
-    const pairings = [
-        // SALADOS
+    const savoryPairings = [
         {
             title: "Croqueta de Hongos",
             subtitle: "Con Alioli de Hierbas",
@@ -37,7 +36,7 @@ export default function Maridaje() {
             subtitle: "Con Aceite de Tomillo",
             match: "Notas Herbales",
             description: "El tomillo actúa como un puente aromático directo con las hierbas de secano presentes en la nariz del vino, uniendo mar y tierra.",
-            image: "/images/maridaje-mar.png", // Using seafood image
+            image: "/images/maridaje-mar.png",
             category: "Armonía Salada",
             bg: "bg-amber-950"
         },
@@ -55,7 +54,7 @@ export default function Maridaje() {
             subtitle: "Salsa de Ají Amarillo",
             match: "Notas Ahumadas y Tostadas",
             description: "El picor suave y el carácter ahumado del ají conversan con las sutiles notas de tabaco y guarda del vino.",
-            image: "/images/maridaje-mar.png", // Using seafood image
+            image: "/images/maridaje-mar.png",
             category: "Armonía Salada",
             bg: "bg-orange-950"
         },
@@ -77,7 +76,9 @@ export default function Maridaje() {
             category: "Armonía Salada",
             bg: "bg-red-900"
         },
-        // DULCES
+    ];
+
+    const sweetPairings = [
         {
             title: "Peras al Vino",
             subtitle: "Espuma de Mascarpone",
@@ -98,12 +99,65 @@ export default function Maridaje() {
         }
     ];
 
+    const PairingCard = ({ item, index }: { item: any, index: number }) => (
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 0.8 }}
+            className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center group`}
+        >
+            {/* Imagen */}
+            <div className="w-full md:w-1/2 relative aspect-[4/3] shadow-2xl overflow-hidden rounded-sm bg-gray-200">
+                <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {/* Overlay sutil */}
+                <div className="absolute inset-0 bg-black/10 mix-blend-multiply transition-opacity group-hover:opacity-0" />
+
+                {/* Etiqueta de Match en Imagen */}
+                <div className="absolute bottom-4 left-4 right-4 text-white text-center">
+                    <div className="backdrop-blur-md bg-black/40 py-2 px-4 rounded-sm border border-white/20">
+                        <span className="text-[10px] uppercase tracking-widest block mb-1 text-white/70">Conexión</span>
+                        <span className="font-serif italic text-lg">{item.match}</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Texto */}
+            <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                <div className="inline-block px-3 py-1 bg-[#881337]/10 text-[#881337] text-[10px] font-bold tracking-widest uppercase rounded-full">
+                    {item.category}
+                </div>
+
+                <div>
+                    <h3 className="text-3xl md:text-5xl font-serif text-[#1a1a1a] leading-none mb-2">
+                        {item.title}
+                    </h3>
+                    <p className="text-[#881337] font-serif italic text-xl">
+                        {item.subtitle}
+                    </p>
+                </div>
+
+                <div className="h-px w-20 bg-[#1a1a1a]/10 mx-auto md:mx-0" />
+
+                <p className="text-slate-600 text-lg leading-relaxed font-sans font-light">
+                    {item.description}
+                </p>
+            </div>
+        </motion.div>
+    );
+
     return (
         <section className="relative bg-[#EBE9E4] py-24 overflow-hidden" id="maridaje">
             <div className="container mx-auto px-4">
 
-                {/* Header */}
-                <div className="text-center mb-20">
+                {/* Header Principal */}
+                <div className="text-center mb-24">
                     <span className="text-[#881337] text-[10px] font-bold tracking-[0.3em] uppercase border-b border-[#881337] pb-1 inline-block mb-4">
                         Menú Degustación
                     </span>
@@ -115,61 +169,51 @@ export default function Maridaje() {
                     </p>
                 </div>
 
-                {/* Grid Visual */}
-                <div className="space-y-32">
-                    {pairings.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-10%" }}
-                            transition={{ duration: 0.8 }}
-                            className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center group`}
-                        >
-                            {/* Imagen */}
-                            <div className="w-full md:w-1/2 relative aspect-[4/3] shadow-2xl overflow-hidden rounded-sm bg-gray-200">
-                                <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    fill
-                                    className="object-cover transition-transform duration-[2s] group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                />
-                                {/* Overlay sutil */}
-                                <div className="absolute inset-0 bg-black/10 mix-blend-multiply transition-opacity group-hover:opacity-0" />
+                {/* SECCIÓN SALADOS */}
+                <div className="mb-32">
+                    <div className="flex items-center justify-center gap-4 mb-16">
+                        <div className="h-px w-12 bg-[#881337]/30"></div>
+                        <h3 className="text-2xl font-serif italic text-[#1a1a1a]">Maridajes Gastronómicos Salados</h3>
+                        <div className="h-px w-12 bg-[#881337]/30"></div>
+                    </div>
+                    <div className="space-y-32">
+                        {savoryPairings.map((item, index) => (
+                            <PairingCard key={index} item={item} index={index} />
+                        ))}
+                    </div>
+                </div>
 
-                                {/* Etiqueta de Match en Imagen */}
-                                <div className="absolute bottom-4 left-4 right-4 text-white text-center">
-                                    <div className="backdrop-blur-md bg-black/40 py-2 px-4 rounded-sm border border-white/20">
-                                        <span className="text-[10px] uppercase tracking-widest block mb-1 text-white/70">Conexión</span>
-                                        <span className="font-serif italic text-lg">{item.match}</span>
-                                    </div>
-                                </div>
-                            </div>
+                {/* BREAK BOTELLA (Interludio) */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="py-20 flex flex-col items-center justify-center relative overflow-hidden my-20"
+                >
+                    <div className="absolute inset-0 bg-[#881337]/5 -skew-y-3 z-0" />
+                    <div className="relative z-10 w-48 h-[500px] drop-shadow-2xl">
+                        <Image
+                            src="/images/botella-caudal.png"
+                            alt="Botella Caudal Cabernet Franc"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                    <p className="relative z-10 mt-8 font-serif italic text-2xl text-[#881337]">"El equilibrio perfecto entre fruta y estructura."</p>
+                </motion.div>
 
-                            {/* Texto */}
-                            <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
-                                <div className="inline-block px-3 py-1 bg-[#881337]/10 text-[#881337] text-[10px] font-bold tracking-widest uppercase rounded-full">
-                                    {item.category}
-                                </div>
-
-                                <div>
-                                    <h3 className="text-3xl md:text-5xl font-serif text-[#1a1a1a] leading-none mb-2">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-[#881337] font-serif italic text-xl">
-                                        {item.subtitle}
-                                    </p>
-                                </div>
-
-                                <div className="h-px w-20 bg-[#1a1a1a]/10 mx-auto md:mx-0" />
-
-                                <p className="text-slate-600 text-lg leading-relaxed font-sans font-light">
-                                    {item.description}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
+                {/* SECCIÓN DULCES */}
+                <div>
+                    <div className="flex items-center justify-center gap-4 mb-16">
+                        <div className="h-px w-12 bg-[#881337]/30"></div>
+                        <h3 className="text-2xl font-serif italic text-[#1a1a1a]">Maridajes Gastronómicos Dulces</h3>
+                        <div className="h-px w-12 bg-[#881337]/30"></div>
+                    </div>
+                    <div className="space-y-32">
+                        {sweetPairings.map((item, index) => (
+                            <PairingCard key={index} item={item} index={index} />
+                        ))}
+                    </div>
                 </div>
 
             </div>
