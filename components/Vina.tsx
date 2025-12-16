@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mountain, CloudSun, Wind } from "lucide-react";
+import { Mountain, CloudSun, Waves } from "lucide-react";
 
 export default function Vina() {
     return (
@@ -50,12 +50,12 @@ export default function Vina() {
                         </p>
                     </div>
 
-                    {/* Card 3: Viento/Patrimonio */}
+                    {/* Card 3: Entre Dos Ríos */}
                     <div className="p-6 border border-white/20 rounded-lg backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors">
-                        <Wind className="w-8 h-8 text-amber-100 mx-auto mb-4" />
-                        <h3 className="text-xl font-serif text-white mb-2">Patrimonio Vivo</h3>
+                        <Waves className="w-8 h-8 text-amber-100 mx-auto mb-4" />
+                        <h3 className="text-xl font-serif text-white mb-2">Entre Dos Ríos</h3>
                         <p className="text-slate-300 text-sm font-light">
-                            Respetamos los ciclos naturales de la viña. Mínima intervención para que el Maule hable en la copa.
+                            Ubicados estratégicamente en la confluencia fluvial, creando un corredor fresco que regula la temperatura y nutre el carácter del vino.
                         </p>
                     </div>
 
