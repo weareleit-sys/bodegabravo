@@ -1,163 +1,114 @@
-// @ts-nocheck
 "use client";
 import { motion } from "framer-motion";
-
-// Variantes de animación para los trazos (Consistente con NotasCata)
-const draw = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-        pathLength: 1,
-        opacity: 1,
-        transition: {
-            pathLength: { delay: 0.2, type: "spring", duration: 1.5, bounce: 0 },
-            opacity: { delay: 0.2, duration: 0.01 }
-        }
-    }
-};
-
-// Datos reales del Menú de Lanzamiento
-const salados = [
-    { plato: "Croqueta de hongos con alioli de hierbas", nota: "Terrosas y herbales" },
-    { plato: "Pimiento rostizado con compota tibia de tomate", nota: "Herbales y terrosas" },
-    { plato: "Tabla de quesos de oveja vasca con cerezas", nota: "Frutales y minerales" },
-    { plato: "Camarones al ajillo con aceite de tomillo", nota: "Herbales" },
-    { plato: "Almejas con pebre de ulte y piure", nota: "Minerales y frescas" },
-    { plato: "Huepos con salsa ají amarillo ahumado", nota: "Ahumadas y tostadas" },
-    { plato: "Brochetas de pato con reducción de frutos rojos", nota: "Frutales intensas y especiadas" },
-    { plato: "Albóndigas de carne con glaseado especiado", nota: "Pimienta, clavo, nuez moscada" },
-];
-
-const dulces = [
-    { plato: "Peras al vino tinto con espuma de mascarpone", nota: "Frutales y ácidas" },
-    { plato: "Pavlova con duraznos y crema de vainilla", nota: "Frutales y especiadas" },
-];
+import Image from "next/image";
 
 export default function Maridaje() {
+    const pairings = [
+        {
+            title: "Brochetas de Pato",
+            subtitle: "La Armonía Perfecta",
+            description: "La grasa del pato exige estructura, mientras que la salsa de frutos rojos crea un puente directo con los aromas a frambuesa y frutilla del Caudal.",
+            image: "/images/maridaje-pato.png",
+            category: "Salado",
+            bg: "bg-stone-900"
+        },
+        {
+            title: "Almejas & Huepos",
+            subtitle: "Frescura de Costa",
+            description: "El yodo y la mineralidad de los mariscos encuentran su par en la columna vertebral de granito del vino. Un maridaje que celebra el origen.",
+            image: "/images/maridaje-mar.png", // Usando la imagen generada de almejas
+            category: "Salado",
+            bg: "bg-slate-900"
+        },
+        {
+            title: "Croqueta de Hongos",
+            subtitle: "Profundidad Terrosa",
+            description: "«La tierra llama a la tierra». Las notas a grafito y bosque del Cabernet Franc se entrelazan con el sabor umami de los hongos silvestres.",
+            image: "/images/maridaje-pato.png", // Placeholder temporal (reusando pato por estilo oscuro)
+            category: "Salado",
+            bg: "bg-neutral-900"
+        },
+        {
+            title: "Pimiento Rostizado",
+            subtitle: "Dulzor Ahumado",
+            description: "El fuego realza el dulzor del pimiento, haciendo eco a la fruta roja madura del vino, mientras la acidez limpia la riqueza del aceite de oliva.",
+            image: "/images/maridaje-pato.png", // Placeholder
+            category: "Salado",
+            bg: "bg-red-950"
+        },
+        {
+            title: "Peras al Vino Tinto",
+            subtitle: "Espejo de Sabor",
+            description: "Un maridaje por concordancia absoluta. El postre contiene la esencia misma del vino, verificando en boca lo que la nariz prometió.",
+            image: "/images/maridaje-pato.png", // Placeholder
+            category: "Dulce",
+            bg: "bg-rose-950"
+        }
+    ];
+
     return (
-        <section className="relative py-32 bg-[#EBE9E4] overflow-hidden">
+        <section className="relative bg-[#EBE9E4] py-24 overflow-hidden" id="maridaje">
+            <div className="container mx-auto px-4">
 
-            {/* Fondo sutil (Ruido) */}
-            <div className="absolute inset-0 z-0 bg-noise opacity-50 pointer-events-none mix-blend-soft-light" />
-
-            <div className="container mx-auto px-6 relative z-10 max-w-4xl">
-
-                {/* ENCABEZADO */}
+                {/* Header */}
                 <div className="text-center mb-20">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-[#881337] text-xs font-bold tracking-[0.4em] uppercase border-b border-[#881337]/30 pb-2 inline-block mb-6"
-                    >
+                    <span className="text-[#881337] text-[10px] font-bold tracking-[0.3em] uppercase border-b border-[#881337] pb-1 inline-block mb-4">
                         Experiencia Gastronómica
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="text-5xl md:text-6xl font-serif text-[#1a1a1a] mb-6"
-                    >
-                        El Arte del Maridaje
-                    </motion.h2>
-                    <p className="text-lg text-slate-600 font-serif italic max-w-2xl mx-auto">
-                        "Nuestra propuesta para el Gran Lanzamiento. Una selección diseñada para dialogar con la tensión vibrante del Cabernet Franc."
+                    </span>
+                    <h2 className="text-4xl md:text-6xl font-serif text-[#1a1a1a]">
+                        Armonías <span className="italic text-[#881337]">Caudal</span>
+                    </h2>
+                    <p className="mt-6 text-slate-600 max-w-2xl mx-auto font-serif italic text-lg">
+                        "El vino no está completo hasta que se comparte en la mesa. Hemos diseñado estos maridajes para resaltar la versatilidad de nuestro Cabernet Franc."
                     </p>
                 </div>
 
-                {/* --- SECCIÓN SALADOS --- */}
-                <div className="mb-24 relative">
-                    {/* Ilustración SVG Abstracta (Plato/Tenedor) */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="flex justify-center mb-10 opacity-80"
-                    >
-                        <svg width="60" height="60" viewBox="0 0 100 100" className="stroke-[#881337] fill-none stroke-[1.5px] overflow-visible">
-                            <motion.path variants={draw} d="M20,50 C20,80 80,80 80,50" /> {/* Plato */}
-                            <motion.path variants={draw} d="M40,20 L40,70" /> {/* Tenedor Izq */}
-                            <motion.path variants={draw} d="M60,20 L60,70" /> {/* Cuchillo Der */}
-                        </svg>
-                    </motion.div>
+                {/* Grid Visual */}
+                <div className="space-y-32">
+                    {pairings.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-20%" }}
+                            transition={{ duration: 0.8 }}
+                            className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center group`}
+                        >
+                            {/* Imagen */}
+                            <div className="w-full md:w-1/2 relative aspect-[4/3] shadow-2xl overflow-hidden rounded-sm">
+                                <Image
+                                    src={item.image}
+                                    alt={item.title}
+                                    fill
+                                    className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
+                                {/* Overlay sutil para atmósfera */}
+                                <div className="absolute inset-0 bg-black/10 mix-blend-multiply transition-opacity group-hover:opacity-0" />
+                            </div>
 
-                    <motion.h3
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="text-3xl font-serif text-center text-[#1a1a1a] mb-12 italic"
-                    >
-                        Armonías Saladas
-                    </motion.h3>
+                            {/* Texto */}
+                            <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                                <div className="inline-block px-3 py-1 bg-[#881337]/10 text-[#881337] text-[10px] font-bold tracking-widest uppercase rounded-full">
+                                    {item.category}
+                                </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                        {salados.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 15 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.4 + (index * 0.1), duration: 0.5 }} // Más lento y elegante
-                                className="flex flex-col items-center text-center group"
-                            >
-                                <h4 className="font-serif text-lg text-[#1a1a1a] mb-2 leading-tight group-hover:text-[#881337] transition-colors">
-                                    {item.plato}
-                                </h4>
-                                <div className="w-8 h-[1px] bg-[#881337]/20 my-2"></div>
-                                <p className="text-xs font-bold tracking-widest text-slate-500 uppercase">
-                                    {item.nota}
+                                <h3 className="text-3xl md:text-5xl font-serif text-[#1a1a1a] leading-tight">
+                                    {item.title}
+                                </h3>
+
+                                <p className="text-[#881337] font-sans font-bold tracking-wider text-sm uppercase">
+                                    — {item.subtitle}
                                 </p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
 
-                {/* --- SECCIÓN DULCES --- */}
-                <div className="relative pt-12 border-t border-[#881337]/10">
-                    {/* Ilustración SVG Abstracta (Postre) */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="flex justify-center mb-10 opacity-80"
-                    >
-                        <svg width="60" height="60" viewBox="0 0 100 100" className="stroke-[#881337] fill-none stroke-[1.5px] overflow-visible">
-                            <motion.circle variants={draw} cx="50" cy="50" r="30" strokeDasharray="4 4" /> {/* Plato Postre */}
-                            <motion.path variants={draw} d="M50,35 Q65,35 65,50 Q65,65 50,65 Q35,65 35,50 Q35,35 50,35" /> {/* Fruta/Dulce */}
-                            <motion.path variants={draw} d="M50,20 L50,35" /> {/* Tallo */}
-                        </svg>
-                    </motion.div>
+                                <div className="h-px w-20 bg-[#1a1a1a]/10 mx-auto md:mx-0" />
 
-                    <motion.h3
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="text-3xl font-serif text-center text-[#1a1a1a] mb-12 italic"
-                    >
-                        Final Dulce
-                    </motion.h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
-                        {dulces.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 15 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.4 + (index * 0.1), duration: 0.5 }}
-                                className="flex flex-col items-center text-center group"
-                            >
-                                <h4 className="font-serif text-lg text-[#1a1a1a] mb-2 leading-tight group-hover:text-[#881337] transition-colors">
-                                    {item.plato}
-                                </h4>
-                                <div className="w-8 h-[1px] bg-[#881337]/20 my-2"></div>
-                                <p className="text-xs font-bold tracking-widest text-slate-500 uppercase">
-                                    {item.nota}
+                                <p className="text-slate-600 text-lg leading-relaxed font-serif">
+                                    "{item.description}"
                                 </p>
-                            </motion.div>
-                        ))}
-                    </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
 
             </div>
