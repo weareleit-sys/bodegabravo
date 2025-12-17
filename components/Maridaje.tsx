@@ -162,10 +162,10 @@ export default function Maridaje() {
                         Menú Degustación
                     </span>
                     <h2 className="text-4xl md:text-6xl font-serif text-[#1a1a1a]">
-                        La Mesa de <span className="italic text-[#881337]">Caudal</span>
+                        Maridaje
                     </h2>
                     <p className="mt-6 text-slate-600 max-w-2xl mx-auto font-serif italic text-lg">
-                        "Cada plato ha sido seleccionado para despertar una cualidad específica de nuestro Cabernet Franc."
+                        "Menú recomendado para degustar Caudal"
                     </p>
                 </div>
 
@@ -182,25 +182,6 @@ export default function Maridaje() {
                         ))}
                     </div>
                 </div>
-
-                {/* BREAK BOTELLA (Interludio) */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="py-20 flex flex-col items-center justify-center relative overflow-hidden my-20"
-                >
-                    <div className="absolute inset-0 bg-[#881337]/5 -skew-y-3 z-0" />
-                    <div className="relative z-10 w-48 h-[500px] drop-shadow-2xl">
-                        <Image
-                            src="/images/botella-caudal.png"
-                            alt="Botella Caudal Cabernet Franc"
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
-                    <p className="relative z-10 mt-8 font-serif italic text-2xl text-[#881337]">"El equilibrio perfecto entre fruta y estructura."</p>
-                </motion.div>
 
                 {/* SECCIÓN DULCES */}
                 <div>
