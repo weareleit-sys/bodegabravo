@@ -93,8 +93,8 @@ export default function Home() {
       {/* COMPONENTES */}
       <Pricing />
       <VintageToast />
-      <CabernetFranc />
-      <div id="historia"><Historia /></div>
+      <div id="historia"><CabernetFranc /></div>
+      <div id="bodega"><Historia /></div>
       <div id="vina"><Vina /></div>
       <div id="maridaje"><Maridaje /></div>
       <Footer />
