@@ -17,6 +17,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bodegabravo.cl'),
   title: "Caudal | Cabernet Franc Icono - Valle del Maule",
   description: "Venta exclusiva de lanzamiento. Vino de autor del Fundo Los Nogales (1887). Oferta especial por cajas con envío directo.",
   keywords: ["Vino Caudal", "Cabernet Franc Chile", "Vino Valle del Maule", "Bodega Bravo", "Vino de Autor", "Oferta Vinos"],
@@ -47,7 +48,40 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <body className={`${playfair.variable} ${lato.variable} antialiased`}>
         {children}
-        <GoogleAnalytics gaId="G-WN49F28ZVX" />
+
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": "Caudal Cabernet Franc 2024",
+              "description": "Vino icono de Bodega Bravo. 100% Cabernet Franc del Valle del Maule, Chile. Edición limitada de 500 botellas.",
+              "brand": {
+                "@type": "Brand",
+                "name": "Bodega Bravo"
+              },
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "CLP",
+                "lowPrice": "9000",
+                "highPrice": "12000",
+                "availability": "https://schema.org/InStock",
+                "offerCount": "3"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "24"
+              },
+              "image": "https://bodegabravo.cl/images/optimized/hero-bottle.webp",
+              "category": "Vino Tinto"
+            })
+          }}
+        />
+
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-WN49F28ZVX"} />
       </body>
     </html>
   );
