@@ -9,7 +9,7 @@ export default function Maridaje() {
             subtitle: "Con Alioli de Hierbas",
             match: "Notas Terrosas y Herbales",
             description: "El perfil fúngico y profundo de los hongos silvestres resuena con las notas de grafito y suelo húmedo del Cabernet Franc. Una conexión directa con la tierra.",
-            image: "/images/maridaje-pato.png", // Placeholder pending Gen
+            image: "/images/maridaje-croqueta.png",
             category: "Armonía Salada",
             bg: "bg-stone-950"
         },
@@ -18,7 +18,7 @@ export default function Maridaje() {
             subtitle: "Compota de Tomate y Albahaca",
             match: "Notas Herbales y Terrosas",
             description: "El dulzor ahumado del pimiento asado y la frescura de la albahaca realzan la fruta roja vibrante del vino, creando un contrapunto delicioso.",
-            image: "/images/maridaje-pato.png", // Placeholder
+            image: "/images/maridaje-pimiento.png",
             category: "Armonía Salada",
             bg: "bg-red-950"
         },
@@ -27,7 +27,7 @@ export default function Maridaje() {
             subtitle: "Con Cerezas Frescas",
             match: "Notas Frutales y Minerales",
             description: "La estructura grasa y la salinidad del queso de oveja limpian el paladar, mientras las cerezas hacen eco de la fruta fresca del vino.",
-            image: "/images/maridaje-pato.png", // Placeholder
+            image: "/images/maridaje-queso.png",
             category: "Armonía Salada",
             bg: "bg-slate-900"
         },
@@ -54,7 +54,7 @@ export default function Maridaje() {
             subtitle: "Salsa de Ají Amarillo",
             match: "Notas Ahumadas y Tostadas",
             description: "El picor suave y el carácter ahumado del ají conversan con las sutiles notas de tabaco y guarda del vino.",
-            image: "/images/maridaje-mar.png",
+            image: "/images/maridaje-huepos.png",
             category: "Armonía Salada",
             bg: "bg-orange-950"
         },
@@ -72,7 +72,7 @@ export default function Maridaje() {
             subtitle: "Vino Especiado",
             match: "Notas Especiadas",
             description: "La sazón de la carne (pimienta, clavo) potencia el lado especiado característico de la cepa. Un abrazo de sabores cálidos.",
-            image: "/images/maridaje-pato.png", // Placeholder
+            image: "/images/maridaje-albondigas.png",
             category: "Armonía Salada",
             bg: "bg-red-900"
         },
@@ -84,7 +84,7 @@ export default function Maridaje() {
             subtitle: "Espuma de Mascarpone",
             match: "Frutales y Ácidas",
             description: "Maridaje por concordancia. El postre contiene la esencia misma del vino, extendiendo la experiencia en una dimensión dulce y elegante.",
-            image: "/images/maridaje-pato.png", // Placeholder
+            image: "/images/maridaje-peras.png",
             category: "Armonía Dulce",
             bg: "bg-purple-950"
         },
@@ -93,7 +93,7 @@ export default function Maridaje() {
             subtitle: "Miel de Ulmo",
             match: "Frutales y Especiadas",
             description: "La acidez del durazno y la complejidad floral de la miel de ulmo bailan con la frescura y verticalidad del vino.",
-            image: "/images/maridaje-pato.png", // Placeholder
+            image: "/images/maridaje-pavlova.png",
             category: "Armonía Dulce",
             bg: "bg-pink-950"
         }
@@ -154,7 +154,34 @@ export default function Maridaje() {
 
     return (
         <section className="relative bg-[#EBE9E4] py-24 overflow-hidden" id="maridaje">
-            <div className="container mx-auto px-4">
+            {/* Background Elements - Inspired by Caudal Box Design */}
+            <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
+
+            {/* Diagonal Red Stripes - Like the wine box */}
+            <svg
+                className="absolute bottom-0 left-0 w-full h-full opacity-[0.04] pointer-events-none"
+                viewBox="0 0 1200 800"
+                preserveAspectRatio="xMinYMax slice"
+            >
+                <g transform="translate(0, 800) rotate(-35 0 0)">
+                    {[...Array(30)].map((_, i) => (
+                        <line
+                            key={i}
+                            x1="0"
+                            y1={i * 40}
+                            x2="2000"
+                            y2={i * 40}
+                            stroke="#881337"
+                            strokeWidth={i % 3 === 0 ? "3" : "1.5"}
+                        />
+                    ))}
+                </g>
+            </svg>
+
+            {/* Subtle gradient vignette */}
+            <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#881337]/5 pointer-events-none" />
+
+            <div className="container mx-auto px-4 relative z-10">
 
                 {/* Header Principal */}
                 <div className="text-center mb-24">
