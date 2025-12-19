@@ -41,15 +41,6 @@ export default function Navbar() {
                         <Link href="#oferta" className="hover:text-[#881337] transition-colors">OFERTAS</Link>
                     </div>
 
-                    {/* BOTÓN TIENDA (Desktop) */}
-                    <Link
-                        href="#oferta"
-                        className="hidden md:flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-bold hover:bg-slate-800 transition-colors"
-                    >
-                        <ShoppingBag className="w-4 h-4" />
-                        <span>COMPRAR CAUDAL</span>
-                    </Link>
-
                     {/* HAMBURGER BUTTON (Mobile) */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
