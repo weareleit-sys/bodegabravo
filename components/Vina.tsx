@@ -46,7 +46,7 @@ export default function Vina() {
                         <CloudSun className="w-8 h-8 text-amber-100 mx-auto mb-4" />
                         <h3 className="text-xl font-serif text-white mb-2">Tradición de Secano</h3>
                         <p className="text-slate-300 text-sm font-light">
-                            Veranos cálidos e influencia costera que permiten una maduración lenta, entregando fruta roja vibrante.
+                            Veranos cálidos que permiten una maduración lenta, entregando fruta roja vibrante.
                         </p>
                     </div>
 
