@@ -36,7 +36,7 @@ export default function Maridaje() {
             subtitle: "Con Aceite de Tomillo",
             match: "Notas Herbales",
             description: "El tomillo actúa como un puente aromático directo con las hierbas de secano presentes en la nariz del vino, uniendo mar y tierra.",
-            image: "/images/maridaje-mar.png",
+            image: "/images/maridaje-camarones.png",
             category: "Armonía Salada",
             bg: "bg-amber-950"
         },
@@ -45,7 +45,7 @@ export default function Maridaje() {
             subtitle: "De Ulte y Piure",
             match: "Notas Minerales y Frescas",
             description: "La mineralidad yodada de la costa maulina se enfrenta a la estructura de granito del vino. Un maridaje de texturas y frescor.",
-            image: "/images/maridaje-mar.png", // Perfect match image
+            image: "/images/maridaje-almejas.png",
             category: "Armonía Salada",
             bg: "bg-cyan-950"
         },
