@@ -29,8 +29,8 @@ export default function Pricing() {
                     <h2 className="text-4xl md:text-5xl font-serif text-[#1a1a1a]">
                         Elige tu Experiencia Caudal
                     </h2>
-                    <p className="text-slate-600 font-serif italic text-lg max-w-xl mx-auto">
-                        "Adquiere nuestro Cabernet Franc Icono directamente de la bodega, sin intermediarios."
+                    <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                        "Adquiere nuestro Cabernet Franc directamente de la bodega, sin intermediarios."
                     </p>
                 </div>
 
