@@ -176,7 +176,7 @@ export default function Maridaje() {
                 <g>
                     {[...Array(25)].map((_, i) => {
                         const y = (i * 70) + (Math.random() * 30 - 15);
-                        const rotation = -45 + (Math.random() * 15);
+                        const rotation = -55 + (Math.random() * 10);
                         const weight = i % 4 === 0 ? "2.5" : i % 2 === 0 ? "1.5" : "1";
                         return (
                             <line
