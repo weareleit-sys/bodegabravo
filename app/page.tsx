@@ -37,8 +37,8 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION */}
-      <section id="hero" className="relative z-10 min-h-[95vh] flex flex-col items-center justify-center pt-24 pb-12 px-4 md:px-0">
-        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+      <section id="hero" className="relative z-10 min-h-[85vh] md:min-h-[95vh] flex flex-col items-center justify-center pt-20 md:pt-24 pb-8 md:pb-12 px-4 md:px-0">
+        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 relative z-10">
 
           {/* TEXTO DE VENTA */}
           <div className="flex-1 order-2 md:order-1 text-center md:text-left space-y-6">
