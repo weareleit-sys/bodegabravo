@@ -64,9 +64,10 @@ export default function Footer() {
                     <div className="text-center md:text-right space-y-4">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">Menu</h4>
                         <ul className="space-y-2 text-sm text-slate-600">
-                            <li><Link href="#hero" className="hover:text-[#881337]">Inicio</Link></li>
                             <li><Link href="#historia" className="hover:text-[#881337]">Historia</Link></li>
-                            <li><Link href="#vina" className="hover:text-[#881337]">La Viña</Link></li>
+                            <li><Link href="#vina" className="hover:text-[#881337]">Viña</Link></li>
+                            <li><Link href="#maridaje" className="hover:text-[#881337]">Maridaje</Link></li>
+                            <li><Link href="#oferta" className="hover:text-[#881337]">Ofertas</Link></li>
                         </ul>
                     </div>
                 </div>
