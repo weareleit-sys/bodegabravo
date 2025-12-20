@@ -75,7 +75,7 @@ export default function Home() {
           {/* IMAGEN BOTELLA */}
           <div className="flex-1 order-1 md:order-2 relative flex justify-center">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-96 md:h-96 bg-stone-300 rounded-full blur-3xl opacity-50 z-0"></div>
-            <div className="relative w-[200px] h-[300px] md:w-[400px] md:h-[600px] z-10">
+            <div className="relative w-[280px] h-[420px] md:w-[400px] md:h-[600px] z-10">
               <Image
                 src="/images/hero-bottle.png"
                 alt="Botella Premium Caudal"
