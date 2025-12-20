@@ -154,35 +154,49 @@ export default function Maridaje() {
 
     return (
         <section className="relative bg-[#EBE9E4] py-24 overflow-hidden" id="maridaje">
-            {/* Background Elements - Enhanced Visibility */}
+            {/* Background Design - Matching Caudal Box */}
+
+            {/* Noise Texture */}
             <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
 
-            {/* Diagonal Red Stripes - MUCH more visible */}
+            {/* Vertical CAUDAL Text - Like the box */}
+            <div className="absolute right-10 top-1/4 -translate-y-1/2 rotate-90 origin-center pointer-events-none select-none">
+                <h1 className="text-[200px] md:text-[280px] leading-none font-serif text-[#1a1a1a] opacity-[0.03] whitespace-nowrap tracking-tighter">
+                    CAUDAL
+                </h1>
+            </div>
+
+            {/* Chaotic Diagonal Red Lines - Throughout ENTIRE section */}
             <svg
-                className="absolute bottom-0 left-0 w-full h-full opacity-[0.18] pointer-events-none"
-                viewBox="0 0 1200 800"
-                preserveAspectRatio="xMinYMax slice"
+                className="absolute inset-0 w-full h-full opacity-[0.25] pointer-events-none"
+                viewBox="0 0 1200 1600"
+                preserveAspectRatio="none"
             >
-                <g transform="translate(0, 800) rotate(-35 0 0)">
-                    {[...Array(30)].map((_, i) => (
-                        <line
-                            key={i}
-                            x1="0"
-                            y1={i * 40}
-                            x2="2000"
-                            y2={i * 40}
-                            stroke="#881337"
-                            strokeWidth={i % 3 === 0 ? "4" : "2"}
-                        />
-                    ))}
+                {/* Random diagonal lines at different angles and positions */}
+                <g>
+                    {[...Array(40)].map((_, i) => {
+                        const y = (i * 50) + (Math.random() * 30 - 15);
+                        const rotation = -30 + (Math.random() * 20 - 10);
+                        const weight = i % 4 === 0 ? "3" : i % 2 === 0 ? "2" : "1";
+                        return (
+                            <line
+                                key={i}
+                                x1="-200"
+                                y1={y}
+                                x2="1400"
+                                y2={y}
+                                stroke="#881337"
+                                strokeWidth={weight}
+                                transform={`rotate(${rotation} 600 800)`}
+                                opacity={0.8}
+                            />
+                        );
+                    })}
                 </g>
             </svg>
 
-            {/* Red accent gradient - more visible */}
-            <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#881337]/12 pointer-events-none" />
-
-            {/* Top corner accent */}
-            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-[#881337]/8 to-transparent pointer-events-none" />
+            {/* Dark gradient vignette */}
+            <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#881337]/15 pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
 
