@@ -168,16 +168,16 @@ export default function Maridaje() {
 
             {/* Chaotic Diagonal Red Lines - Throughout ENTIRE section */}
             <svg
-                className="absolute inset-0 w-full h-full opacity-[0.25] pointer-events-none"
+                className="absolute inset-0 w-full h-full opacity-[0.12] md:opacity-[0.18] pointer-events-none"
                 viewBox="0 0 1200 1600"
                 preserveAspectRatio="none"
             >
                 {/* Random diagonal lines at different angles and positions */}
                 <g>
-                    {[...Array(40)].map((_, i) => {
-                        const y = (i * 50) + (Math.random() * 30 - 15);
-                        const rotation = -30 + (Math.random() * 20 - 10);
-                        const weight = i % 4 === 0 ? "3" : i % 2 === 0 ? "2" : "1";
+                    {[...Array(25)].map((_, i) => {
+                        const y = (i * 70) + (Math.random() * 30 - 15);
+                        const rotation = -45 + (Math.random() * 15);
+                        const weight = i % 4 === 0 ? "2.5" : i % 2 === 0 ? "1.5" : "1";
                         return (
                             <line
                                 key={i}
@@ -188,7 +188,7 @@ export default function Maridaje() {
                                 stroke="#881337"
                                 strokeWidth={weight}
                                 transform={`rotate(${rotation} 600 800)`}
-                                opacity={0.8}
+                                opacity={0.7}
                             />
                         );
                     })}
