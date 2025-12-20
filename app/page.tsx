@@ -37,37 +37,36 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION */}
-      <section id="hero" className="relative z-10 min-h-[85vh] md:min-h-[95vh] flex flex-col items-center justify-center pt-20 md:pt-24 pb-8 md:pb-12 px-4 md:px-0">
-        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 relative z-10">
+      <section id="hero" className="relative z-10 min-h-[75vh] md:min-h-[95vh] flex flex-col items-center justify-center pt-16 md:pt-24 pb-4 md:pb-12 px-4 md:px-0">
+        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 relative z-10">
 
           {/* TEXTO DE VENTA */}
-          <div className="flex-1 order-2 md:order-1 text-center md:text-left space-y-6">
-            <div className="inline-block bg-stone-200/80 backdrop-blur-sm text-stone-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-2 border border-stone-300">
+          <div className="flex-1 order-2 md:order-1 text-center md:text-left space-y-4 md:space-y-6">
+            <div className="inline-block bg-stone-200/80 backdrop-blur-sm text-stone-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-1 md:mb-2 border border-stone-300">
               Edición Limitada 2024
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-slate-900 leading-tight drop-shadow-sm">
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif text-slate-900 leading-tight drop-shadow-sm">
               CAUDAL
             </h1>
 
             <p className="text-lg md:text-xl text-slate-700 max-w-md mx-auto md:mx-0 font-light">
               La máxima expresión del Cabernet Franc. <br />
-              {/* CORREGIDO: Maule en lugar de Maipo */}
               <span className="italic text-slate-500">Valle del Maule, Chile.</span>
             </p>
 
             {/* CTA PRINCIPAL - SCROLL TO PRICING */}
-            <div className="pt-8">
+            <div className="pt-4 md:pt-8 pb-2">
               <a
                 href="#oferta"
                 onClick={scrollToPricing}
-                className="group w-full md:w-auto bg-[#881337] hover:bg-rose-950 text-white text-lg font-medium py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 active:scale-95 relative overflow-hidden"
+                className="group w-full md:w-auto bg-[#881337] hover:bg-rose-950 text-white text-lg font-medium py-3 md:py-4 px-6 md:px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 active:scale-95 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
                 <span>VER OFERTAS LANZAMIENTO</span>
                 <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               </a>
-              <p className="text-xs text-slate-500 mt-3 text-center md:text-left">
+              <p className="text-xs text-slate-500 mt-2 md:mt-3 text-center md:text-left">
                 *Desde $9.000 la botella comprando por caja.
               </p>
             </div>
@@ -75,8 +74,8 @@ export default function Home() {
 
           {/* IMAGEN BOTELLA */}
           <div className="flex-1 order-1 md:order-2 relative flex justify-center">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-stone-300 rounded-full blur-3xl opacity-50 z-0"></div>
-            <div className="relative w-[280px] h-[420px] md:w-[400px] md:h-[600px] z-10">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-96 md:h-96 bg-stone-300 rounded-full blur-3xl opacity-50 z-0"></div>
+            <div className="relative w-[200px] h-[300px] md:w-[400px] md:h-[600px] z-10">
               <Image
                 src="/images/optimized/hero-bottle.webp"
                 alt="Botella Premium Caudal"
