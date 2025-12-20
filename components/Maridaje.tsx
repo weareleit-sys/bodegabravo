@@ -154,12 +154,12 @@ export default function Maridaje() {
 
     return (
         <section className="relative bg-[#EBE9E4] py-24 overflow-hidden" id="maridaje">
-            {/* Background Elements - Inspired by Caudal Box Design */}
-            <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none" />
+            {/* Background Elements - Enhanced Visibility */}
+            <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
 
-            {/* Diagonal Red Stripes - Like the wine box */}
+            {/* Diagonal Red Stripes - MUCH more visible */}
             <svg
-                className="absolute bottom-0 left-0 w-full h-full opacity-[0.04] pointer-events-none"
+                className="absolute bottom-0 left-0 w-full h-full opacity-[0.18] pointer-events-none"
                 viewBox="0 0 1200 800"
                 preserveAspectRatio="xMinYMax slice"
             >
@@ -172,14 +172,17 @@ export default function Maridaje() {
                             x2="2000"
                             y2={i * 40}
                             stroke="#881337"
-                            strokeWidth={i % 3 === 0 ? "3" : "1.5"}
+                            strokeWidth={i % 3 === 0 ? "4" : "2"}
                         />
                     ))}
                 </g>
             </svg>
 
-            {/* Subtle gradient vignette */}
-            <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#881337]/5 pointer-events-none" />
+            {/* Red accent gradient - more visible */}
+            <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#881337]/12 pointer-events-none" />
+
+            {/* Top corner accent */}
+            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-[#881337]/8 to-transparent pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
 
