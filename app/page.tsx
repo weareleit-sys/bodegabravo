@@ -43,7 +43,7 @@ export default function Home() {
           {/* TEXTO DE VENTA */}
           <div className="flex-1 order-2 md:order-1 text-center md:text-left space-y-4 md:space-y-6">
             <div className="inline-block bg-stone-200/80 backdrop-blur-sm text-stone-600 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-1 md:mb-2 border border-stone-300">
-              Edición Limitada 2024
+              Edición limitada cosecha 2023
             </div>
 
             <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif text-slate-900 leading-tight drop-shadow-sm">
