@@ -72,16 +72,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* IMAGEN BOTELLA */}
-          <div className="flex-1 order-1 md:order-2 relative flex justify-center">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-96 md:h-96 bg-stone-300 rounded-full blur-3xl opacity-50 z-0"></div>
-            <div className="relative w-[280px] h-[420px] md:w-[400px] md:h-[600px] z-10">
+          {/* IMAGEN HERO PRODUCTO */}
+          <div className="flex-1 order-1 md:order-2 relative flex justify-center items-center">
+            <div className="relative w-full aspect-square md:aspect-[4/3] max-w-[600px]">
               <Image
-                src="/images/hero-bottle.png"
-                alt="Botella Premium Caudal"
+                src="/images/optimized/caudal-hero-home.png"
+                alt="Botella Caudal Cabernet Franc"
                 fill
                 priority
-                className="object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700"
+                className="object-cover rounded-xl shadow-2xl hover:scale-[1.02] transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -92,7 +91,7 @@ export default function Home() {
       {/* COMPONENTES */}
       <Pricing />
       <VintageToast />
-      <div id="historia"><CabernetFranc /></div>
+      <CabernetFranc />
       <div id="bodega"><Historia /></div>
       <div id="vina"><Vina /></div>
       <div id="maridaje"><Maridaje /></div>

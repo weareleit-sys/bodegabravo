@@ -18,7 +18,7 @@ export default function Historia() {
                     >
                         <div className="relative h-[350px] lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/optimized/family-detail.webp"
+                                src="/images/optimized/cabernet-franc-hands.png"
                                 alt="Historia Bodega Bravo"
                                 fill
                                 className="object-cover hover:scale-105 transition-transform duration-700"

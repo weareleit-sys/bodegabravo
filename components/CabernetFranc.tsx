@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function CabernetFranc() {
     return (
-        <section className="relative pt-12 pb-32 bg-[#EBE9E4] overflow-hidden text-[#1a1a1a]" id="cepa">
+        <section className="relative pt-12 pb-32 bg-[#EBE9E4] overflow-hidden text-[#1a1a1a] scroll-mt-24" id="historia">
 
             {/* 1. TEXTURA RUIDO (Profundidad) */}
             <div className="absolute inset-0 z-0 bg-noise opacity-40 pointer-events-none mix-blend-soft-light" />
