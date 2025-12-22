@@ -73,10 +73,10 @@ export default function Home() {
           </div>
 
           {/* IMAGEN HERO PRODUCTO */}
-          <div className="flex-1 order-1 md:order-2 relative flex justify-center items-center">
-            <div className="relative w-full aspect-square md:aspect-[4/3] max-w-[600px]">
+          <div className="w-full md:flex-1 order-1 md:order-2 relative flex justify-center items-center p-4 md:p-0">
+            <div className="relative w-full aspect-square md:aspect-[4/3] max-w-[500px] md:max-w-[600px]">
               <Image
-                src="/images/optimized/caudal-hero-home.png"
+                src="/images/optimized/caudal-hero-final.png"
                 alt="Botella Caudal Cabernet Franc"
                 fill
                 priority
