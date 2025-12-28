@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Check, MessageCircle, Star } from "lucide-react";
 
 export default function Pricing() {
-    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "56975496553";
+    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "56993330628";
 
     const whatsappLink = (message: string) =>
         `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
