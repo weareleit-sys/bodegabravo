@@ -63,7 +63,7 @@ export default function Home() {
                 className="group w-full md:w-auto bg-[#881337] hover:bg-rose-950 text-white text-lg font-medium py-3 md:py-4 px-6 md:px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3 active:scale-95 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
-                <span>VER OFERTAS LANZAMIENTO</span>
+                <span>OFERTAS VERANO</span>
                 <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               </a>
               <p className="text-xs text-slate-500 mt-2 md:mt-3 text-center md:text-left">
@@ -76,7 +76,7 @@ export default function Home() {
           <div className="w-full md:flex-1 order-1 md:order-2 relative flex justify-center items-center p-4 md:p-0">
             <div className="relative w-full aspect-square md:aspect-[4/3] max-w-[500px] md:max-w-[600px]">
               <Image
-                src="/images/optimized/caudal-hero-final.png"
+                src="/images/optimized/caudal-hero-summer.png"
                 alt="Botella Caudal Cabernet Franc"
                 fill
                 priority
