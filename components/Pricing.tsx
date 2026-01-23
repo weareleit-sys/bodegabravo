@@ -59,7 +59,7 @@ export default function Pricing() {
                     <div className="bg-gradient-to-r from-[#881337] to-rose-700 text-white px-6 py-4 rounded-xl shadow-lg flex items-center justify-center gap-3 text-center">
                         <Truck className="w-5 h-5 flex-shrink-0" />
                         <p className="text-sm md:text-base font-medium">
-                            <span className="font-bold">Delivery todos los viernes</span> en Pucón y Villarrica
+                            <span className="font-bold">Delivery todos los viernes</span> en Región Metropolitana y Región de la Araucanía
                         </p>
                     </div>
                 </motion.div>
@@ -136,7 +136,7 @@ export default function Pricing() {
                         </p>
 
                         <p className="text-slate-600 text-sm mb-8 leading-relaxed border-t border-[#881337]/20 pt-4">
-                            Para restaurantes, eventos de verano o grupos grandes en Pucón y Villarrica.
+                            Para restaurantes, eventos de verano o grupos grandes en Región Metropolitana y Región de la Araucanía.
                         </p>
 
                         <ul className="space-y-3 mb-8 flex-grow">
